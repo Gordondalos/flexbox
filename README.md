@@ -1,28 +1,114 @@
-# Flexbox
+.flex-conainer
+	display: flex
+	flex-direction: column-reverse
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 1.0.0.
 
-## Development server
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+.inline-flex-conainer
+	display: inline-flex
+	flex-direction: row-reverse
+	flex-wrap: wrap //flex-wrap: wrap | nowrap | wrap-reverse
+	width: 150px
 
-## Code scaffolding
+.justify-content
+	background-color: #fff
+	padding: 10px
+	box-shadow: 1px 3px solid grey
+	display: flex
+	justify-content: space-around //space-between //space-around //flex-end //center // flex-start
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive/pipe/service/class/module`.
+.justify-content1
+	@extend .justify-content
 
-## Build
+	.flex-element
+		&:first-child
+			margin-right: auto
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `-prod` flag for a production build.
+	.flex-element
+		&:last-child
+			margin-left: auto
 
-## Running unit tests
+.order
+	background-color: #fff
+	padding: 10px
+	box-shadow: 1px 3px solid grey
+	display: flex
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+	.red
+		order: 1
+	.black
+		order: -1
+	.green
+		order: 2
 
-## Running end-to-end tests
+.flex-grow
+	background-color: #fff
+	padding: 10px
+	display: flex
 
-Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
-Before running the tests make sure you are serving the app via `ng serve`.
+	.flex-element
+		flex-grow: 1
 
-## Further help
+	.green
+		flex-grow: 2
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
+.vettical
+	background-color: #fff
+	padding: 10px
+	display: flex
+	height: 400px
+	align-items: stretch
+
+	.flex-element
+		flex: 1
+	.red
+		align-self: flex-start
+	.black
+		align-self: flex-end
+	.green
+		align-self: center
+
+.vettical-bottom
+	@extend .vettical
+	align-items: flex-end
+
+.vettical-top
+	@extend .vettical
+	align-items: flex-start
+
+.vettical-center
+	@extend .vettical
+	align-items: center
+
+
+.center-block
+	background-color: #fff
+	padding: 10px
+	display: flex
+	height: 400px
+	flex-direction: row
+	justify-content: center
+	align-items: center
+
+
+.center-block-elem
+	background-color: #fff
+	padding: 10px
+	display: flex
+	height: 400px
+	flex-direction: row
+	justify-content: center
+
+	.flex-element
+		align-self: center
+
+.center-block-elem-margin
+	background-color: #fff
+	padding: 10px
+	display: flex
+	height: 400px
+	flex-direction: row
+
+
+	.flex-element
+		margin: auto
