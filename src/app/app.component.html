@@ -1,3 +1,313 @@
 <h1>
-  {{title}}
+	{{title}}
 </h1>
+
+<section class="wrapper">
+	<h3>flex</h3>
+	<div class="flex-conainer">
+		<div class="flex-element red">1</div>
+		<div class="flex-element blue">2</div>
+		<div class="flex-element green">3</div>
+		<div class="flex-element darkslategrey">4</div>
+		<div class="flex-element yellow">5</div>
+		<div class="flex-element black">6</div>
+	</div>
+
+	<br>
+	<br>
+
+	<h3>flex-inline</h3>
+
+	<div class="inline-flex-conainer">
+		<div class="flex-element red">1</div>
+		<div class="flex-element blue">2</div>
+		<div class="flex-element green">3</div>
+		<div class="flex-element darkslategrey">4</div>
+		<div class="flex-element yellow">5</div>
+		<div class="flex-element black">6</div>
+	</div>
+
+	<h3>Свойства контейнера</h3>
+
+	<pre>
+		.flex-container
+			display: flex;
+			flex-direction: row* | column | row-reverse | column-reverse
+	</pre>
+
+	<p>Если нужно чтобы элементы перетикали если им
+	не хватает места, то нужно использовать
+		<br>
+		flex-wrap: wrap | nowrap | wrap-reverse
+	</p>
+
+
+	<h3>Выравнивание внутри контейнера</h3>
+	<pre>
+		.justify-content
+			background-color: #fff
+			padding: 10px
+			box-shadow: 1px 3px solid grey
+			display: flex
+			justify-content: space-between //space-between //space-around //flex-end //center // flex-start
+
+	</pre>
+
+	<div class="justify-content">
+		<div class="flex-element red">1</div>
+		<div class="flex-element blue">2</div>
+		<div class="flex-element green">3</div>
+		<div class="flex-element darkslategrey">4</div>
+		<div class="flex-element yellow">5</div>
+		<div class="flex-element black">6</div>
+	</div>
+
+	<h3> Маргины у элементов</h3>
+
+	<pre>
+		.justify-content1
+			@extend .justify-content
+
+			.flex-element
+				&:first-child
+					margin-right: auto
+
+			.flex-element
+				&:last-child
+					margin-left: auto
+	</pre>
+
+	<div class="justify-content1">
+		<div class="flex-element red">1</div>
+		<div class="flex-element blue">2</div>
+		<div class="flex-element green">3</div>
+		<div class="flex-element darkslategrey">4</div>
+		<div class="flex-element yellow">5</div>
+		<div class="flex-element black">6</div>
+	</div>
+
+
+	<h3>Изменение порядка элементов</h3>
+
+	<pre>
+		.order
+			background-color: #fff
+			padding: 10px
+			box-shadow: 1px 3px solid grey
+			display: flex
+
+			.red
+				order: 1
+			.black
+				order: -1
+			.green
+				order: 2
+	</pre>
+
+	<p>чем больше цифра ордер тем правее элемент, чем меньше тем левее</p>
+
+	<div class="order">
+		<div class="flex-element red">1</div>
+		<div class="flex-element blue">2</div>
+		<div class="flex-element green">3</div>
+		<div class="flex-element darkslategrey">4</div>
+		<div class="flex-element yellow">5</div>
+		<div class="flex-element black">6</div>
+	</div>
+
+
+	<h3>Изменение размеров элементов</h3>
+
+	<pre>
+		.flex-element
+			flex-grow: 1; // элементы относятся 1 к 1 ( или 2 к 1 если указать 2)
+			flex-shrink: 1; // это коэфициент уменьшения
+			flex-basis: auto | 100px; // указывает минимальный размер элемента, потом он переносится
+
+	</pre>
+
+	<p>тогоже можно добиться через свойство flex, передав ему 1 или более парпаметров</p>
+
+	<pre>
+		.flex-element
+			flex: 1 200px; // означет растяни но минимум 200 писк
+
+	</pre>
+
+	<div class="flex-grow">
+		<div class="flex-element red">1</div>
+		<div class="flex-element blue">2</div>
+		<div class="flex-element green">3</div>
+		<div class="flex-element darkslategrey">4</div>
+		<div class="flex-element yellow">5</div>
+		<div class="flex-element black">6</div>
+	</div>
+
+
+	<h3>Вертикальное выравнивание</h3>
+
+	<p>растянуть</p>
+
+	<pre>
+		.vettical
+			background-color: #fff
+			padding: 10px
+			display: flex
+			height: 400px
+			align-items: stretch
+		.flex-element
+			flex: 1
+		.red
+			align-self: flex-start
+	</pre>
+
+
+	<pre>
+		flex-container
+			align-items: baseline | center | flex-end | flex-start | stretch;
+			align-content: flex-end | flex-start | center | space-around | space-between | stretch;
+
+
+		.flex-element
+			align-self: auto | baseline | center | flex-end | flex-start | stretch*;
+
+	</pre>
+
+	<p>align-content - выравнивает элементы по вертикальной оси</p>
+
+	<div class="vettical">
+		<div class="flex-element red">1</div>
+		<div class="flex-element blue">2</div>
+		<div class="flex-element green">3</div>
+		<div class="flex-element darkslategrey">4</div>
+		<div class="flex-element yellow">5</div>
+		<div class="flex-element black">6</div>
+	</div>
+
+	<br>
+
+	<pre>
+		.vettical-bottom
+			@extend .vettical
+			align-items: flex-end
+	</pre>
+
+	<div class="vettical-bottom">
+		<div class="flex-element red">1</div>
+		<div class="flex-element blue">2</div>
+		<div class="flex-element green">3</div>
+		<div class="flex-element darkslategrey">4</div>
+		<div class="flex-element yellow">5</div>
+		<div class="flex-element black">6</div>
+	</div>
+
+
+
+	<pre>
+		.vettical-center
+			@extend .vettical
+			align-items: center
+	</pre>
+
+	<br>
+
+	<div class="vettical-center">
+		<div class="flex-element red">1</div>
+		<div class="flex-element blue">2</div>
+		<div class="flex-element green">3</div>
+		<div class="flex-element darkslategrey">4</div>
+		<div class="flex-element yellow">5</div>
+		<div class="flex-element black">6</div>
+	</div>
+
+
+	<pre>
+		.vettical-top
+			@extend .vettical
+			align-items: flex-start
+	</pre>
+
+	<br>
+
+	<div class="vettical-top">
+		<div class="flex-element red">1</div>
+		<div class="flex-element blue">2</div>
+		<div class="flex-element green">3</div>
+		<div class="flex-element darkslategrey">4</div>
+		<div class="flex-element yellow">5</div>
+		<div class="flex-element black">6</div>
+	</div>
+
+	<br>
+
+	<h3>простое выравнивание поцентру</h3>
+
+	<pre>
+		.center-block
+			background-color: #fff
+			padding: 10px
+			display: flex
+			height: 400px
+			flex-direction: row
+			justify-content: center
+			align-items: center
+	</pre>
+
+
+	<div class="center-block">
+		<div class="flex-element red">
+			я люблю быть в центре внимания
+		</div>
+	</div>
+
+	<br>
+
+	<h3>простое выравнивание поцентру</h3>
+
+	<pre>
+		.center-block-elem
+			background-color: #fff
+			padding: 10px
+			display: flex
+			height: 400px
+			flex-direction: row
+			justify-content: center
+
+			.flex-element
+				align-self: center
+
+	</pre>
+
+	<div class="center-block-elem">
+		<div class="flex-element red">
+			я люблю быть в центре внимания
+		</div>
+	</div>
+
+	<br>
+
+	<h3>простое выравнивание поцентру</h3>
+
+	<pre>
+		.center-block-elem-margin
+			background-color: #fff
+			padding: 10px
+			display: flex
+			height: 400px
+			flex-direction: row
+
+			.flex-element
+				margin: auto
+	</pre>
+
+	<div class="center-block-elem-margin">
+		<div class="flex-element red">
+			я люблю быть в центре внимания
+		</div>
+	</div>
+
+</section>
+
+
+
+

@@ -1,0 +1,29 @@
+/* line 1, app.component.sass */
+.red {
+  background-color: red;
+}
+
+/* line 4, app.component.sass */
+.blue {
+  background-color: blue;
+}
+
+/* line 7, app.component.sass */
+.green {
+  background-color: green;
+}
+
+/* line 10, app.component.sass */
+.darkslategrey {
+  background-color: darkslategrey;
+}
+
+/* line 13, app.component.sass */
+.yellow {
+  background-color: yellow;
+}
+
+/* line 16, app.component.sass */
+.black {
+  background-color: black;
+}
